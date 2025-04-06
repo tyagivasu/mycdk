@@ -34,9 +34,12 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-  release:
+  test:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Release
-        run: echo Release.
+        run: | 
+          echo py test,
+          pip install flask pytest,
+          pytest -v
